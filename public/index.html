@@ -1,51 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Royal Spice</title>
+
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<nav>
-    <h2>Royal Spice 🍽️</h2>
-    <ul>
+<nav id="navbar">
+
+    <div class="logo">
+        🍽 Royal Spice
+    </div>
+
+    <ul class="nav-links">
+
         <li><a href="#home">Home</a></li>
+
         <li><a href="#menu">Menu</a></li>
+
         <li><a href="#about">About</a></li>
+
         <li><a href="#contact">Contact</a></li>
+
     </ul>
+    <div class="cart-icon">
+
+🛒
+
+<span id="cart-count">0</span>
+
+</div>
+<button id="themeToggle">
+
+🌙
+
+</button>
+
 </nav>
 
 <header id="home">
-    <h1>Welcome to Royal Spice</h1>
-    <p>Authentic taste | Fresh ingredients | Fine dining experience</p>
-    <button onclick="bookTable()">Book a Table</button>
+
+<video autoplay muted loop playsinline id="heroVideo">
+
+<source src="videos/restaurant.mp4" type="video/mp4">
+
+</video>
+
+<div class="video-overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+
+<span id="typing"></span>
+
+</h1>
+
+<p>
+
+Authentic Taste • Premium Experience • Fresh Ingredients
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn">
+
+Explore Menu
+
+</button>
+
+<button class="secondary-btn">
+
+Reserve Table
+
+</button>
+
+</div>
+
+<div class="scroll-indicator">
+
+↓
+
+</div>
+
+</div>
+
 </header>
 
 <section id="menu">
-    <h2>Our Menu</h2>
 
-    <div class="menu-container">
-        <div class="card">🍕 Pizza - ₹299</div>
-        <div class="card">🍔 Burger - ₹199</div>
-        <div class="card">🍝 Pasta - ₹249</div>
-        <div class="card">🍹 Mocktails - ₹149</div>
+    <div class="menu-controls">
+
+<input
+type="text"
+id="searchBox"
+placeholder="🔍 Search your favorite food...">
+
+<div class="filters">
+
+<button class="filter-btn active" data-filter="all">All</button>
+
+<button class="filter-btn" data-filter="pizza">Pizza</button>
+
+<button class="filter-btn" data-filter="burger">Burger</button>
+
+<button class="filter-btn" data-filter="pasta">Pasta</button>
+
+<button class="filter-btn" data-filter="drink">Drinks</button>
+
+</div>
+
+</div>
+
+<h2>Popular Dishes</h2>
+
+<div class="menu-container">
+
+<div class="food-card pizza">
+
+<div class="favorite">❤</div>
+
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza">
+
+<div class="food-info">
+
+<h3>Margherita Pizza</h3>
+
+<p>Fresh mozzarella, basil and tomato sauce.</p>
+
+<div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+
+<div class="price-cart">
+
+<span>₹299</span>
+
+<button>Add to Cart</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="food-card burger">
+
+<div class="favorite">❤</div>
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Burger">
+
+<div class="food-info">
+
+<h3>Cheese Burger</h3>
+
+<p>Juicy grilled patty with cheddar cheese.</p>
+
+<div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+
+<div class="price-cart">
+
+<span>₹199</span>
+
+<button>Add to Cart</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="food-card pasta">
+
+<div class="favorite">❤</div>
+
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
+
+<div class="food-info">
+
+<h3>Italian Pasta</h3>
+
+<p>Creamy Alfredo sauce with herbs.</p>
+
+<div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
+
+<div class="price-cart">
+
+<span>₹249</span>
+
+<button>Add to Cart</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="why-us">
+
+    <h2>Why Choose Royal Spice?</h2>
+
+    <div class="features">
+
+        <div class="feature-box">
+            <div class="icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>Hot and fresh food delivered quickly to your doorstep.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon">👨‍🍳</div>
+            <h3>Master Chefs</h3>
+            <p>Our chefs prepare every dish with passion and experience.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon">🥗</div>
+            <h3>Fresh Ingredients</h3>
+            <p>Only premium quality vegetables, spices and meats.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon">⭐</div>
+            <h3>Top Rated</h3>
+            <p>Loved by thousands of happy customers across the city.</p>
+        </div>
+
     </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h3 class="counter" data-target="10000">0</h3>
+
+        <p>Happy Customers</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h3 class="counter" data-target="120">0</h3>
+
+        <p>Menu Items</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h3 class="counter" data-target="15">0</h3>
+
+        <p>Years of Experience</p>
+
+    </div>
+
+    <div class="stat">
+
+        <h3>4.9★</h3>
+
+        <p>Average Rating</p>
+
+    </div>
+
+</section>
+
+<section id="testimonials">
+
+    <h2>What Our Customers Say</h2>
+
+    <div class="testimonial-container">
+
+        <div class="testimonial active">
+
+            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+            <p>
+                "Absolutely amazing food. Every dish was fresh and delicious.
+                Highly recommended!"
+            </p>
+
+            <h3>Rahul Sharma</h3>
+
+            <span>⭐⭐⭐⭐⭐</span>
+
+        </div>
+
+        <div class="testimonial">
+
+            <img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+            <p>
+                "The ambience is wonderful and the staff is very friendly."
+            </p>
+
+            <h3>Priya Patel</h3>
+
+            <span>⭐⭐⭐⭐⭐</span>
+
+        </div>
+
+        <div class="testimonial">
+
+            <img src="https://randomuser.me/api/portraits/men/12.jpg">
+
+            <p>
+                "One of the best restaurants I've visited. Worth every penny."
+            </p>
+
+            <h3>Arjun Kumar</h3>
+
+            <span>⭐⭐⭐⭐⭐</span>
+
+        </div>
+
+    </div>
+
+    <div class="testimonial-buttons">
+
+        <button id="prevBtn">❮</button>
+
+        <button id="nextBtn">❯</button>
+
+    </div>
+
 </section>
 
 <section id="about">
+
     <h2>About Us</h2>
+
     <p>
-        Royal Spice is a modern restaurant serving delicious food with a traditional touch.
-        We believe in quality, taste, and customer satisfaction.
+
+        Royal Spice serves authentic dishes prepared with fresh ingredients and passion.
+
     </p>
+
+</section>
+
+<section id="gallery">
+
+<h2>Our Gallery</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800">
+
+<div class="overlay">
+
+<h3>Italian Pizza</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800">
+
+<div class="overlay">
+
+<h3>Cheese Burger</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800">
+
+<div class="overlay">
+
+<h3>French Fries</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800">
+
+<div class="overlay">
+
+<h3>Creamy Pasta</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800">
+
+<div class="overlay">
+
+<h3>Fresh Salad</h3>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800">
+
+<div class="overlay">
+
+<h3>Healthy Bowl</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="reservation">
+
+<h2>Reserve Your Table</h2>
+
+<div class="reservation-container">
+
+<form id="reservationForm">
+
+<input
+type="text"
+id="name"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
+
+<select id="guests">
+
+<option>1 Guest</option>
+
+<option>2 Guests</option>
+
+<option>3 Guests</option>
+
+<option>4 Guests</option>
+
+<option>5 Guests</option>
+
+<option>6 Guests</option>
+
+</select>
+
+<input
+type="date"
+id="date"
+required>
+
+<input
+type="time"
+id="time"
+required>
+
+<button type="submit">
+
+Reserve Table
+
+</button>
+
+</form>
+
+</div>
+
 </section>
 
 <section id="contact">
+
     <h2>Contact Us</h2>
-    <p>Email: royalspice@email.com</p>
-    <p>Phone: +91 98765 43210</p>
+
+    <p>Email : royalspice@email.com</p>
+
+    <p>Phone : +91 9876543210</p>
+
 </section>
 
 <footer>
-    <p>© 2026 Royal Spice Restaurant</p>
-</footer>
+    <div id="cart-sidebar">
 
-<script src="script.js"></script>
+<div class="cart-header">
+
+<h2>Your Cart</h2>
+
+<button id="close-cart">✖</button>
+
+</div>
+
+<div id="cart-items">
+
+</div>
+
+<div class="cart-footer">
+
+<h3>Total ₹<span id="total-price">0</span></h3>
+
+<button class="checkout-btn">
+
+Checkout
+
+</button>
+
+</div>
+
+</div>
+
+    © 2026 Royal Spice
+
+</footer>
+<div id="lightbox">
+
+<span id="closeLightbox">&times;</span>
+
+<img id="lightboxImg">
+
+</div>
+
+<script src="js/navbar.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/search.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/reservation.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/testimonials.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/app.js"></script>
+
+<div id="toast"></div>
+
 </body>
 </html>
